@@ -64,3 +64,6 @@ tolerations:
       operator: "Equal"
       value: "blue"
       effect: "NoSchedule"
+
+Labels
+kubectl label node <node-name> <key>=<value>
