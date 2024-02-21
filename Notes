@@ -2,3 +2,4 @@ kubectl create -f <yaml file>
 kubectl get <kind>
 kubectl delete <kind> <name>
 kubectl replace -f <yanl file> --> This works after you uopdate the yaml file and then want to delploy
+kubectl get all=

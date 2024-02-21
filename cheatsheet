@@ -26,5 +26,21 @@ kubectl get pods --all-namespaces --> will get all pods in all namespaces
 ImperativeCommands:
 kubectl run <pod_name> --image=<name of the image>
 kubectl expose pod <pod_name> --port=<port_number> --name <name of the server> --> for creating a service
-kubectl create deployment  <deployment name> --image=<image name> --replicas=<number> --> for creating a deployment
+kubectl create deployment  <deployment name> --image=<image name> --replicas=<number> -n <namespace> --> for creating a deployment
 kubectl create ns <name> --> for creating namespace
+
+ConfigMap:
+Imperative- kubectl create configmap <config-name> --from-literal=<key>=<value> --from-literal=<key>=<value> ....
+Declarative-
+apiVersion: v1
+kind:ConfigMap, metadata and data: <key>:<value>
+kubectl get configmaps -n <namespace> --> gets all the config map in the desired namespace
+kubectl describe configmaps -n <namespace> --> describes the configmaps under the namespace
+
+Secrets:
+Imperative- kubectl create secret generic <secret-name> --from-literal=<key>=<value> --from-literal=<key>=<value> ....
+Declarative-
+apiVersion: v1
+kind: Secret, metadata and data: <key>:<value>
+kubectl get secrets
+kubectl describe secrets
